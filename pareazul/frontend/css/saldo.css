@@ -1,0 +1,17 @@
+.ant-col-24,
+.ant-col-xs-24,
+.ant-col-sm-24,
+.ant-col-md-24,
+.ant-col-lg-24 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ant-col-24 {
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}

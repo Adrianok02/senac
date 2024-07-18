@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+  <link rel="stylesheet" href="css/login.css"> 
+
+  <!-- bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="root" class="full-screen">
+    <section class="ant-layout" style="height: 100%;">
+      <div style="height: 100vh;">
+        <div type="flex" class="ant-row ant-row-space-around ant-row-middle"
+          style="height: 100%; background: linear-gradient(to right, rgb(22, 119, 255), rgb(19, 19, 19));">
+          <div class="ant-card ant-card-bordered card-login">
+            <div class="ant-card-body">
+              <div class="ant-row ant-row-center" style="margin-left: -12px; margin-right: -12px;">
+                <div class="ant-col ant-col-24 ant-col-md-12" style="padding-left: 12px; padding-right: 12px;">
+                  <h1 class="login-texto-foco">Login</h1>
+                  <h4 class="login-texto-simples">Acesse sua conta</h4>
+                  <div class="ant-form ant-form-horizontal" style="margin-top: 30px;">
+                    <div class="ant-row" style="margin-left: -8px; margin-right: -8px; row-gap: 16px;">
+                      <div class="ant-col ant-col-xs-11 ant-col-sm-7 ant-col-md-7 ant-col-lg-9 ant-col-xl-9"
+                        style="padding-left: 8px; padding-right: 8px;">
+                        <div class="ant-select ant-select-lg ant-select-single ant-select-show-arrow"
+                          style="font-size: 14px;">
+                          <div class="ant-select-selector"><span class="ant-select-selection-search"><input
+                                type="search" id="credential" autocomplete="off"
+                                class="ant-select-selection-search-input" role="combobox" aria-haspopup="listbox"
+                                aria-owns="credential_list" aria-autocomplete="list" aria-controls="credential_list"
+                                aria-activedescendant="credential_list_0" readonly="" unselectable="on" value=""
+                                style="opacity: 0;"></span><span class="ant-select-selection-item"
+                              title="Email">Email</span></div><span class="ant-select-arrow" unselectable="on"
+                            aria-hidden="true" style="user-select: none;"><span role="img" aria-label="down"
+                              class="anticon anticon-down ant-select-suffix"><svg viewBox="64 64 896 896"
+                                focusable="false" data-icon="down" width="1em" height="1em" fill="currentColor"
+                                aria-hidden="true">
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                </path>
+                              </svg></span></span>
+                        </div>
+                      </div>
+                      <div class="ant-col ant-col-xs-13 ant-col-sm-17 ant-col-md-17 ant-col-lg-15 ant-col-xl-15"
+                        style="padding-left: 8px; padding-right: 8px;">
+                        <div class="ant-form-item" style="margin-bottom: 0px;">
+                          <div class="ant-row ant-form-item-row">
+                            <div class="ant-col ant-form-item-control">
+                              <div class="ant-form-item-control-input">
+                                <div class="ant-form-item-control-input-content"><input placeholder="Email"
+                                    id="email" aria-required="true" class="ant-input ant-input-lg" type="text"
+                                    value="admin@email.com" style="font-size: 14px;"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ant-col ant-col-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-24 ant-col-xl-24"
+                        style="padding-left: 8px; padding-right: 8px;">
+                        <div class="ant-form-item" style="margin-bottom: 0px;">
+                          <div class="ant-row ant-form-item-row">
+                            <div class="ant-col ant-form-item-control">
+                              <div class="ant-form-item-control-input">
+                                <div class="ant-form-item-control-input-content"><input type="password"
+                                    placeholder="Senha" id="senha" aria-required="true" class="ant-input ant-input-lg"
+                                    style="font-size: 14px;"
+                                    value="123456"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ant-col ant-col-24 ant-col-sm-24 ant-col-md-24 ant-col-lg-24 ant-col-xl-24"
+                        style="padding-left: 8px; padding-right:8px; display: none;">
+                        <div class="ant-form-item">
+                          <div class="ant-row ant-form-item-row">
+                            <div class="ant-col ant-form-item-control">
+                              <div class="ant-form-item-control-input">
+                                <div class="ant-form-item-control-input-content">
+                                  <div
+                                    class="ant-select ant-select-lg ant-select-in-form-item input-login ant-select-single ant-select-show-arrow ant-select-show-search"
+                                    aria-required="true" style="font-size: 14px;">
+                                    <div class="ant-select-selector"><span class="ant-select-selection-search"><input
+                                          type="search" id="prefeitura" autocomplete="off"
+                                          class="ant-select-selection-search-input" role="combobox"
+                                          aria-haspopup="listbox" aria-owns="prefeitura_list" aria-autocomplete="list"
+                                          aria-controls="prefeitura_list" aria-activedescendant="prefeitura_list_0"
+                                          aria-required="true" value=""></span><span
+                                        class="ant-select-selection-placeholder">Cidade</span></div><span
+                                      class="ant-select-arrow" unselectable="on" aria-hidden="true"
+                                      style="user-select: none;"><span role="img" aria-label="down"
+                                        class="anticon anticon-down ant-select-suffix"><svg viewBox="64 64 896 896"
+                                          focusable="false" data-icon="down" width="1em" height="1em"
+                                          fill="currentColor" aria-hidden="true">
+                                          <path
+                                            d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+                                          </path>
+                                        </svg></span></span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ant-col ant-col-24" style="padding: 0px;">
+                      <div class="ant-row">
+                      </div>
+                      <div class="ant-form-item" style="margin-top: 30px;">
+                        <div class="ant-row ant-form-item-row">
+                          <div class="ant-col ant-form-item-control">
+                            <div class="ant-form-item-control-input">
+                              <div class="ant-form-item-control-input-content">
+                                <div class="ant-row ant-row-end" style="margin-left: -8px; margin-right: -8px;">
+                                  <div class="ant-col" style="padding-left: 8px; padding-right: 8px;">
+                                    <button data-toggle="modal" data-target="#modal-usuario"
+                                      type="button" class="ant-btn ant-btn-primary btn-voltar"><span>Criar nova
+                                        conta</span></button></div>
+                                  <div class="ant-col" style="padding-left: 8px; padding-right: 8px;"><button
+                                      type="submit"
+                                      class="ant-btn ant-btn-primary btn-form"><span onclick="login()">Entrar</span></button></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ant-col ant-col-0 ant-col-md-1" style="padding-left: 12px; padding-right: 12px;">
+                  <div class="ant-divider ant-divider-vertical" role="separator" style="height: 100%;"></div>
+                </div>
+                <div class="ant-col ant-col-0 ant-col-md-10" style="padding-left: 12px; padding-right: 12px;">
+                  <div
+                    style="height: 100%; align-items: center; display: flex; justify-content: center; flex-direction: column; padding-left: 12px;">
+                    <img src="index_files/7d52cd8db26d6593054a9838842ccd63.png" alt="logo-pareazul"
+                      style="width: 100%; max-width: 80px;"><span
+                      style="margin-top: 8px; font-size: 24px; font-weight: bold; color: rgb(52, 104, 175);">Pare
+                      Azul</span><span style="font-size: 18px; color: rgb(52, 104, 175);">Web Motorista</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="tldx-toast-container"></div>
+  <div id="tldx-webext-container"></div> 
+  
+    <div>
+      <div class="ant-modal-mask ant-modal-mask-hidden"></div>
+      <!-- Modal -->
+      <div class="modal fade" id="modal-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="novo-cartao">Usuario</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <div>
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="nome-usuario" placeholder="Nome">
+                          </div>
+
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="cpf-usuario" placeholder="CPF">
+                          </div>
+
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="telefone-usuario" placeholder="Telefone">
+                          </div>
+
+                          <hr>
+                          <h3>Acesso ao Sistema:</h3>
+                          <hr>
+
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="email-usuario" placeholder="Email">
+                          </div>
+
+                          <div class="form-group">
+                            <input type="password" class="form-control" id="senha-usuario" placeholder="Senha">
+                          </div>
+
+                          <div class="form-group">
+                            <input type="password" class="form-control" id="senha-usuario2" placeholder="Confirmar Senha">
+                          </div>
+                      </div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal" id="fecharModalUsuario">Fechar</button>
+                      <button type="button" class="btn btn-primary" onclick="confirmarUsuario()">Confirmar</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</body>
+
+<!-- bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+
+</html>

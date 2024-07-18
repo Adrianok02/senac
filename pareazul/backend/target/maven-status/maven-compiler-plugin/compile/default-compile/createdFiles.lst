@@ -1,0 +1,7 @@
+bancocrudspringboot\repository\CadastroRepository.class
+bancocrudspringboot\controller\CadastroController.class
+bancocrudspringboot\CrudSpringbootPostgresql.class
+bancocrudspringboot\exception\ResourceNotFoundException.class
+bancocrudspringboot\exception\ErrorDetails.class
+bancocrudspringboot\exception\GlobalExceptionHandler.class
+bancocrudspringboot\model\Cadastro.class
