@@ -3,7 +3,22 @@ function atualizaPainel(){
     listarCartoes();
     listarVeiculos();
     listarEstacionamentos();
+    listarCreditoAtualizado();
+}
 
+function listarCreditoAtualizado(){
+    const usuario_logado = localStorage.getItem("usuario_logado");
+    const method = "GET";
+    const rota = "creditousuario/" + usuario_logado;
+    callApi(method, rota, function (data) {
+
+
+        console.log("CREDITO DO USUARIO:" + data.valor  );
+        console.log(data);
+
+        let SALDO_USUARIO_LOGADO = data.valor;        
+        document.querySelector("#SALDO_USUARIO_LOGADO").innerHTML = "R$ " + formataNum(SALDO_USUARIO_LOGADO);
+    });
 }
 
 function atualizaDadosPerfil(){

@@ -35,7 +35,7 @@ public class UsuarioController {
 		return this.usuarioRepository.findAll();
 	}
 
-	// Inserir
+	// Criar usuario
 	@PostMapping("/usuario")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Usuario createCadastro(@RequestBody Usuario cadastro) {
