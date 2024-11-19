@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios</title>
+
+    <!-- NOVO BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    input[type=text],
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+        background-color: #45a049;
+    }
+
+    .formularioUsuarios {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 700px;
+    }
+
+    .modal-content {
+        width: 100vw;
+    }
+
+    .disabled{
+        background-color: rgba(205, 201, 201, 0.501);
+    }
+
+    td{
+        color: black;
+    }
+</style>
+
+<script>
+    
+    function alterarsuarios(codigo){
+        const modal = document.querySelector('modalUsuario');
+        modal.showModal();
+        modal.style.display = 'block';
+        
+        var myModal = document.getElementById('modalUsuario');
+        var myInput = document.getElementById('descricao');
+
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    }
+
+</script>
+
+<body onload="loadUsuarios()">
+    <input type="hidden" id="usuario_logado">
+    <div class="cadastro usuario_logado">
+        <label for="email_usuario_logado">Usuário logado:</label>
+        <input type="text" id="email_usuario_logado" disabled style="color: black;">
+    </div>
+        
+    <div id="menu"></div>
+    <!-- MODAL INICIO -->
+   
+    <!-- Modal -->
+    <div class="modal fade" id="modalUsuarios" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Cadastro de Usuario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="formularioUsuarios">
+                        <form action="#">
+                            <div class="cadastro">
+                                <label for="id">Código:</label>
+                                <input type="text" id="id" disabled class="disabled">
+                            </div>
+                            <div class="cadastro">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" value="Adriano">
+                            </div>
+                            <div class="cadastro">
+                                <label for="email">E-mail:</label>
+                                <input type="text" id="email" value="adm@gmail.com">
+                            </div>
+                            <div class="cadastro">
+                                <label for="senha">Senha:</label>
+                                <input type="text" id="senha" value="50">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" onclick="confirmarUsuarios()">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL FIM -->
+    <hr>
+    <section>
+        <h4>Consulta de Usuario</h4>
+        <button id="btnIncluirUsuarios" 
+        type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUsuarios" onclick="incluirUsuarios()">
+            Incluir Usuario
+        </button>
+        <div class="separator"></div>
+        <div class="tbl-header">
+            <table>
+                <thead>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Senha</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody id="consulta-usuarios"></tbody>
+            </table>
+        </div>
+    </section> 
+</body>
+
+<!-- JAVASCRIPT SEPARADO -->
+<script src="js/api.js"></script>
+<script src="js/login.js"></script>
+<script src="js/usuarios.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</html>
